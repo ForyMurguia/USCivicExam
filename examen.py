@@ -1,5 +1,7 @@
 import random
 from datetime import datetime
+from winreg import QueryValueEx
+
 
 class Question(object):
     def __init__(self, text, answers, number_answers = 1, weight = 10000, age = 1):
@@ -10,6 +12,7 @@ class Question(object):
         self.age = age
 
 questions = [
+    # AMERICAN GOVERNMENT
     # A: Principles of American Democracy
     Question("What is the supreme law of the land?",[
         "the constitution",
@@ -180,7 +183,7 @@ questions = [
         "resolves disagreements",
         "decides if a law goes against the constitution",
     ]),
-    Question("What is the highes court in the United States", [
+    Question("What is the highest court in the United States", [
         "the supreme court",
     ]),
     Question("How many justices are on the Supreme Court?", [
@@ -224,6 +227,70 @@ questions = [
         "mike johnson",
         "johnson",
         "james michael johnson",
+    ]),
+
+    # C: Rights and Responsibilities
+    Question("There are four amendments to the Constitution about who can vote. Describe one of them.", [
+        "any citizen can vote",
+        "women and men can vote",
+        "citizens 18 and older can vote",
+        "you don't have to pay to vote",
+        "a male citizen of any race can vote",
+    ]),
+    Question("What is one responsibility that is only for United States citizens.", [
+        "serve on a jury",
+        "vote in a federal election",
+    ]),
+    Question("Name one right only for United States citizens.", [
+        "vote in a federal election",
+        "run for federal office",
+    ]),
+    Question("What are two rights of everyone living in the United States?", [
+        "freedom of expression",
+        "freedom of speech",
+        "freedom of assembly",
+        "freedom to petition the government",
+        "freedom of religion",
+        "the right to bear arms",
+    ], number_answers=2),
+    Question("What do we show loyalty to when we say the Pledge of Allegiance?", [
+        "the united states",
+        "the flag",
+    ]),
+    Question("What is one promise you make when you become a United States citizen?", [
+        "give up loyalty to other countries",
+        "defend the constitution and laws of the united states",
+        "obey the laws of the united states",
+        "serve in the U.S. military",
+        "serve the nation",
+        "be loyal to the united states",
+    ]),
+    Question("How old do citizens have to be to vote for President?", [
+        "eighteen and older",
+        "18 and older",
+    ]),
+    Question("What are two ways that Americans can participate in their democracy?", [
+        "vote",
+        "join a political party",
+        "help with a campaign",
+        "join a civic group",
+        "join a community group",
+        "give an elected official your opinion on an issue",
+        "call senators or representatives",
+        "publicly support or oppose an issue or policy",
+        "run for office",
+        "write to a newspaper",
+    ], number_answers=2),
+    Question("When is the last day you can send in federal income tax forms?", [
+        "april 15",
+    ]),
+    Question("When must all men register for the selective service?", [
+        "at age eighteen",
+        "at age 18",
+        "between 18 and 26",
+        "between eighteen and twenty-six",
+        "between 18 and twenty-six",
+        "between eighteen and 26",
     ]),
 ]
 
