@@ -408,6 +408,70 @@ questions = [
         "fought for women's rights",
         "fought for civil rights",
     ]),
+
+    # C: Recent American History and Other Important Historical Information
+    Question("Name one war fought by the United States in the 1900s.", [
+        "world war i",
+        "world war ii",
+        "korean war",
+        "vietnam war",
+        "persian gulf war",
+        "gulf war",
+    ]),
+    Question("who was President during World War I?", [
+        "woodrow wilson",
+        "wilson",
+    ]),
+    Question("Who was President during the Great Depression and World War II?", [
+        "frank roosevelt",
+        "roosevelt",
+    ]),
+    Question("Who did the United States fight in World War II?", [
+        "japan",
+        "germany",
+        "italy",
+    ], number_answers=3),
+    Question("Before he was President, Eisenhower was a general. What war was he in?", [
+        "world war ii",
+    ]),
+    Question("During the Cold War, what was the main concern of the United States?", [
+        "communism",
+    ]),
+    Question("What movement tried to end racial discrimination?", [
+        "civil rights movement",
+        "civil rights",
+    ]),
+    Question("What did Martin Luther King, Jr. do?", [
+        "fought for civil rights",
+        "worked for equality for all americans",
+    ]),
+    Question("What major even happened on September 11, 2001, in the United States?", [
+        "terrorists attacked the United States",
+    ]),
+    Question("Name one American Indian tribe in the United States.", [
+        "cherokee",
+        "navajo",
+        "sioux",
+        "chippewa",
+        "choctaw",
+        "pueblo",
+        "apache",
+        "iroquois",
+        "creek",
+        "blackfeet",
+        "seminole",
+        "cheyenne",
+        "arawak",
+        "shawnee",
+        "mohegan",
+        "huron",
+        "oneida",
+        "lakota",
+        "crow",
+        "teton",
+        "hopi",
+        "inuit",
+    ])
 ]
 
 random.seed(datetime.now().timestamp())
