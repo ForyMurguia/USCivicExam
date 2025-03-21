@@ -292,6 +292,84 @@ questions = [
         "between 18 and twenty-six",
         "between eighteen and 26",
     ]),
+
+    # AMERICAN HISTORY
+    # A: Colonial Period and Independence
+    Question("What is one reason colonist came to America?", [
+        "freedom",
+        "political liberty",
+        "religious freedom",
+        "economic opportunity",
+        "practice their religion",
+        "escape persecution",
+    ]),
+    Question("Who lived in America before the Europeans arrived?", [
+        "american indians",
+        "native americans",
+    ]),
+    Question("What group of people was taken to America and sold as slaves?", [
+        "africans",
+        "people from africa",
+    ]),
+    Question("Why did the colonists fight the British?", [
+        "because of high taxes",
+        "because of taxation without representation",
+        "because the british army stayed in their houses",
+        "because they didn't have self-government",
+    ]),
+    Question("Who wrote the Declaration of Independence?", [
+        "jefferson",
+        "thomas jefferson",
+    ]),
+    Question("When was the Declaration of Independence adopted?", [
+        "july 4, 1776",
+    ]),
+    Question("There were 13 original states. Name three.", [
+        "new hampshire",
+        "massachusetts",
+        "rhode island",
+        "connecticut",
+        "new york",
+        "new jersey",
+        "pennsylvania",
+        "delaware",
+        "maryland",
+        "virginia",
+        "north carolina",
+        "south carolina",
+        "georgia",
+    ], number_answers=3),
+    Question("What happened at the Constitutional Convention?", [
+        "the constitution was written",
+        "the founding fathers wrote the constitution",
+    ]),
+    Question("When was the Constitution written?", [
+        "1787",
+    ]),
+    Question("The Federalist Papers supported the passage of the U.S. Constitution. Name one of the writers.", [
+        "james madison",
+        "madison",
+        "alexander hamilton",
+        "hamilton",
+        "john jay",
+        "jay",
+        "publius",
+    ]),
+    Question("What is one thing Benjamin Franklin is famous for?", [
+        "u.s. diplomat",
+        "oldest member of the constitutional convention",
+        "first postmaster general of the united states",
+        "writer of \"poor richard's almanac\"",
+        "started the first free libraries",
+    ]),
+    Question("Who is the \"Father of Our Country\"?", [
+        "george washington",
+        "washington",
+    ]),
+    Question("Who was the first President?", [
+        "george washington",
+        "washington",
+    ]),
 ]
 
 random.seed(datetime.now().timestamp())
