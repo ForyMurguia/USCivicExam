@@ -370,6 +370,44 @@ questions = [
         "george washington",
         "washington",
     ]),
+
+    # B: 1800s
+    Question("What territory did the United States buy from France in 1803?", [
+        "the louisiana territory",
+        "louisiana",
+    ]),
+    Question("Name one war fought by the United States in the 1800s.", [
+        "war of 1812",
+        "mexican-american war",
+        "civil war",
+        "spanish-american war",
+    ]),
+    Question("Name the U.S. war between the North and the South.", [
+        "the civil war",
+        "the war between the states",
+    ]),
+    Question("Name one problem that led to the Civil War.", [
+        "slavery",
+        "economic reasons",
+        "states' rights",
+    ]),
+    Question("What was one important thing that Abraham Lincoln did?", [
+        "freed the slaves",
+        "emancipation proclamation",
+        "saved the union",
+        "preserved the union",
+        "led the united states during the civil war",
+    ]),
+    Question("What did the Emancipation Proclamation do?", [
+        "freed the slaves",
+        "freed slaves in the confederacy",
+        "freed the slaves in the confederate states",
+        "freed slaves in most southern states",
+    ]),
+    Question("What did Susan B. Anthony do?", [
+        "fought for women's rights",
+        "fought for civil rights",
+    ]),
 ]
 
 random.seed(datetime.now().timestamp())
