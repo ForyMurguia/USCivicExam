@@ -1,7 +1,8 @@
 import random
 from datetime import datetime
-from winreg import QueryValueEx
 
+CORRECT_WEIGHT = 1
+WRONG_WEIGHT = 20
 
 class Question(object):
     def __init__(self, text, answers, number_answers = 1, weight = 10000, age = 1):
@@ -119,7 +120,7 @@ questions = [
     Question("Who does a U.S. Senator represent?", [
         "all people of the state",
     ]),
-    Question("Why do some states have more Representatives that other states", [
+    Question("Why do some states have more Representatives than other states", [
         "because of the state's population",
         "because they have more people",
         "because some states have more people",
@@ -445,7 +446,7 @@ questions = [
         "fought for civil rights",
         "worked for equality for all americans",
     ]),
-    Question("What major even happened on September 11, 2001, in the United States?", [
+    Question("What major event happened on September 11, 2001, in the United States?", [
         "terrorists attacked the united states",
     ]),
     Question("Name one American Indian tribe in the United States.", [
@@ -563,55 +564,61 @@ questions = [
     ], number_answers=2),
 ]
 
-random.seed(datetime.now().timestamp())
-correct_answers = 0
-CORRECT_WEIGHT = 1
-WRONG_WEIGHT = 20
-print("There are", len(questions), "questions")
-for index, question in enumerate(questions):
-    print(str(index + 1) + ".", question.text)
-    for line in question.answers:
-        print("  -", line)
-        if (not line.islower()) and line.isalpha():
-            print("-------- format incorrect")
-            exit(1)
-while True:
-    total_weight = sum([(question.weight * question.age) for question in questions])
-    random_weight = random.randint(0, total_weight - 1)
-    index = 0
-    while index < len(questions):
-        random_weight -= questions[index].weight * questions[index].age
-        if random_weight < 0:
-            break
-        index += 1
-    print(str(index + 1) + ".", questions[index].text)
-    if questions[index].number_answers > 1:
-        print("(Give each answer in a single line)")
-    answers = set()
-    while len(answers) < questions[index].number_answers:
-        current_answer = input().lower()
-        if  current_answer in answers:
-            print("You already provided that answer, please try with a different one.")
+def run_exam():
+    random.seed(datetime.now().timestamp())
+    correct_answers = 0
+    print("There are", len(questions), "questions")
+    for index, question in enumerate(questions):
+        print(str(index + 1) + ".", question.text)
+        for line in question.answers:
+            print("  -", line)
+            if (not line.islower()) and line.isalpha():
+                print("-------- format incorrect")
+                exit(1)
+    global_score = 0
+    iterations = 0
+    while True:
+        total_weight = sum([(question.weight * question.age) for question in questions])
+        random_weight = random.randint(0, total_weight - 1)
+        index = 0
+        while index < len(questions):
+            random_weight -= questions[index].weight * questions[index].age
+            if random_weight < 0:
+                break
+            index += 1
+        print(str(index + 1) + ".", questions[index].text)
+        if questions[index].number_answers > 1:
+            print("(Give each answer in a single line)")
+        answers = set()
+        while len(answers) < questions[index].number_answers:
+            current_answer = input().lower()
+            if  current_answer in answers:
+                print("You already provided that answer, please try with a different one.")
+            else:
+                answers.add(current_answer)
+        previous_weight = questions[index].weight
+        if previous_weight == CORRECT_WEIGHT:
+            correct_answers -= 1
+        correct = True
+        for answer in answers:
+            if answer not in questions[index].answers:
+                correct = False
+                break
+        if correct:
+            questions[index].weight = CORRECT_WEIGHT
+            print("That is correct! The possible answers are:")
+            correct_answers += 1
+            global_score += 1
         else:
-            answers.add(current_answer)
-    previous_weight = questions[index].weight
-    if previous_weight == CORRECT_WEIGHT:
-        correct_answers -= 1
-    correct = True
-    for answer in answers:
-        if answer not in questions[index].answers:
-            correct = False
-            break
-    if correct:
-        questions[index].weight = CORRECT_WEIGHT
-        print("That is correct! The possible answers are:")
-        correct_answers += 1
-    else:
-        questions[index].weight = WRONG_WEIGHT
-        print("That is NOT right! The possible answers are:")
-    for line in questions[index].answers:
-        print(" - " + line)
-    for question in questions:
-        question.age += 1
-    questions[index].age = 0
-    print("Score:", correct_answers, "out of", len(questions))
+            questions[index].weight = WRONG_WEIGHT
+            print("That is NOT right! The possible answers are:")
+        for line in questions[index].answers:
+            print(" - " + line)
+        for question in questions:
+            question.age += 1
+        questions[index].age = 0
+        iterations += 1
+        print("Score:", correct_answers, "out of", len(questions), "(" + str(global_score), "/", iterations, "this session)")
+
+if __name__ == "__main__":
+    run_exam()
