@@ -446,7 +446,7 @@ questions = [
         "worked for equality for all americans",
     ]),
     Question("What major even happened on September 11, 2001, in the United States?", [
-        "terrorists attacked the United States",
+        "terrorists attacked the united states",
     ]),
     Question("Name one American Indian tribe in the United States.", [
         "cherokee",
@@ -535,7 +535,7 @@ questions = [
         "because there were 13 original colonies",
         "because the stripes represent the original colonies",
     ]),
-    Question("Why does the flag have 50 starts?", [
+    Question("Why does the flag have 50 stars?", [
         "because there is one for each state",
         "because each star represents a state",
         "because there are 50 states",
