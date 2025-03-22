@@ -471,7 +471,96 @@ questions = [
         "teton",
         "hopi",
         "inuit",
-    ])
+    ]),
+
+    # INTEGRATED CIVICS
+    # A: Geography
+    Question("Name one of the two longest rivers in the UnitedStates.", [
+        "missouri river",
+        "missouri",
+        "mississippi river",
+        "mississippi",
+    ]),
+    Question("What ocean is on the West Coast of the United States?", [
+        "pacific ocean",
+        "pacific",
+    ]),
+    Question("What ocean is on the East Coast of the United States?", [
+        "atlantic ocean",
+        "atlantic",
+    ]),
+    Question("Name one U.S. territory.", [
+        "puerto rico",
+        "u.s. virgin islands",
+        "american samoa",
+        "northern mariana islands",
+        "guam",
+    ]),
+    Question("Name one state that borders Canada.", [
+        "maine",
+        "new hampshire",
+        "vermont",
+        "new york",
+        "pennsylvania",
+        "ohio",
+        "michigan",
+        "minnesota",
+        "north dakota",
+        "montana",
+        "idaho",
+        "washington",
+        "alaska",
+    ]),
+    Question("Name one state that borders Mexico.", [
+        "california",
+        "arizona",
+        "new mexico",
+        "texas",
+    ]),
+    Question("What is the capital of the United States?", [
+        "washington, d.c.",
+    ]),
+    Question("Where is the Statue of Liberty?", [
+        "new york harbor",
+        "new york",
+        "liberty island",
+        "new jersey",
+        "near new york city",
+        "on the hudson",
+        "on the hudson river",
+    ]),
+
+    # B: Symbols
+    Question("Why does the flag have 13 stripes?", [
+        "because there were 13 original colonies",
+        "because the stripes represent the original colonies",
+    ]),
+    Question("Why does the flag have 50 starts?", [
+        "because there is one for each state",
+        "because each star represents a state",
+        "because there are 50 states",
+    ]),
+    Question("What is the name of the national anthem?", [
+        "the star-spangled banner",
+    ]),
+
+    # C: Holidays
+    Question("When do we celebrate Independence Day?", [
+        "july 4",
+    ]),
+    Question("Name two national U.S. holidays.", [
+        "new year’s day",
+        "martin luther king, jr. day",
+        "presidents’ day",
+        "memorial day",
+        "juneteenth",
+        "independence day",
+        "labor day",
+        "columbus day",
+        "veterans day",
+        "thanksgiving",
+        "christmas",
+    ], number_answers=2),
 ]
 
 random.seed(datetime.now().timestamp())
